@@ -3,10 +3,12 @@ import { getDatabase, ref, set, push } from "firebase/database";
 import './LoginRegister';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../../FirebaseConfig';
-//import (auth,db) from '../../FirebaseConfig';
+import { auth, db } from '../../FirebaseConfig';
 import {z} from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 
 const Register = () => {
